@@ -42,7 +42,11 @@ module.exports = {
     },
     "lint": {
       "type": "confirm",
-      "message": "你需要在代码中使用 ESLint 吗？?"
+      "message": "你需要在代码中使用 ESLint 吗?"
+    },
+    "axios": {
+      "type": "confirm",
+      "message": "你需要在代码中使用 axios 吗?"
     },
     "lintConfig": {
       "when": "lint",
