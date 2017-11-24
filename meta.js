@@ -40,13 +40,13 @@ module.exports = {
         }
       ]
     },
-    "lint": {
-      "type": "confirm",
-      "message": "你需要在代码中使用 ESLint 吗?"
-    },
     "axios": {
       "type": "confirm",
-      "message": "你需要在代码中使用 axios 吗?"
+      "message": "Install Axios?"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "Use ESLint to lint your code?"
     },
     "lintConfig": {
       "when": "lint",
