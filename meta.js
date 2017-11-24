@@ -70,10 +70,6 @@ module.exports = {
         }
       ]
     },
-    "unit": {
-      "type": "confirm",
-      "message": "Setup unit tests"
-    },
     "runner": {
       "when": "unit",
       "type": "list",

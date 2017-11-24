@@ -13,7 +13,7 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     {{#axios}}
-    "axios": "^*",
+    "axios": "^*"
     {{/axios}}
   },
   "devDependencies": {
