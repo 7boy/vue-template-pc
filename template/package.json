@@ -10,11 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    {{#axios}}"axios": "^*",{{/axios}}
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    {{#axios}}
-    "axios": "^*"
-    {{/axios}}
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
