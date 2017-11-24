@@ -47,18 +47,13 @@ module.exports = {
     "lintConfig": {
       "when": "lint",
       "type": "list",
-      "message": "Pick an ESLint preset",
+      "message": "选择ESLint",
       "choices": [
         {
           "name": "Standard (https://github.com/standard/standard)",
           "value": "standard",
           "short": "Standard"
         },
-        {
-          "name": "none (configure it yourself)",
-          "value": "none",
-          "short": "none"
-        }
       ]
     },
     "unit": {
