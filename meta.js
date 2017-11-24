@@ -12,17 +12,17 @@ module.exports = {
     "name": {
       "type": "string",
       "required": true,
-      "message": "Project name"
+      "message": "项目名称"
     },
     "description": {
       "type": "string",
       "required": false,
-      "message": "Project description",
+      "message": "项目说明",
       "default": "A Vue.js project"
     },
     "author": {
       "type": "string",
-      "message": "Author"
+      "message": "作者"
     },
     "build": {
       "type": "list",
@@ -40,13 +40,13 @@ module.exports = {
         }
       ]
     },
-    "router": {
-      "type": "confirm",
-      "message": "Install vue-router?"
-    },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code?"
+      "message": "你需要在代码中使用 ESLint 吗？?"
+    },
+    "axios": {
+      "type": "confirm",
+      "message": "你需要在代码中使用 axios 吗？?"
     },
     "lintConfig": {
       "when": "lint",
@@ -96,10 +96,6 @@ module.exports = {
         }
       ]
     },
-    "e2e": {
-      "type": "confirm",
-      "message": "Setup e2e tests with Nightwatch?"
-    }
   },
   "filters": {
     ".eslintrc.js": "lint",
