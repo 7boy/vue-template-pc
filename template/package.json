@@ -27,6 +27,7 @@
     {{#axios}}
     "axios": "^*",
     {{/axios}}
+    "normalize": "^*",
     "vue": "^2.5.2"{{#router}},
     "vue-router": "^3.0.1"{{/router}}
   },
