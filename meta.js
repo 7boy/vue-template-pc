@@ -12,17 +12,17 @@ module.exports = {
     "name": {
       "type": "string",
       "required": true,
-      "message": "Project name"
+      "message": "项目名称"
     },
     "description": {
       "type": "string",
       "required": false,
-      "message": "Project description",
+      "message": "项目说明",
       "default": "A Vue.js project"
     },
     "author": {
       "type": "string",
-      "message": "Author"
+      "message": "作者"
     },
     "build": {
       "type": "list",
@@ -40,13 +40,9 @@ module.exports = {
         }
       ]
     },
-    "axios": {
-      "type": "confirm",
-      "message": "Install Axios?"
-    },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code?"
+      "message": "是否需要在代码中使用 ESLint(standard) ?"
     },
     "lintConfig": {
       "when": "lint",

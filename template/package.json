@@ -24,12 +24,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    {{#axios}}
     "axios": "^*",
-    {{/axios}}
-    "normalize": "^*",
-    "vue": "^2.5.2"{{#router}},
-    "vue-router": "^3.0.1"{{/router}}
+    "node-sass": "^*",
+    "sass-loader": "^*",
+    "element-theme": "^*",
+    "element-ui": "^*",
+    "normalize.css": "^*",
+    "vue": "^*",
+    "vue-router": "^*"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
