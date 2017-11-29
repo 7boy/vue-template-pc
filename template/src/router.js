@@ -11,8 +11,13 @@ function view (path) {
 
 const router = new Router({
   routes: [
-    {path: '/', name: 'Home', component: view('Home')},
-    {path: '*', redirect: {name: 'Home'}}]
+    {path: '/', component: view('Login')},
+    {path: '/index', component: view('Index'),
+      children:[
+        {path: '/', name: 'Home', component: view('Home')}
+      ]
+    },
+    {path: '*', redirect: {path: '/'}}]
 })
 
 export default router
