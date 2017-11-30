@@ -4,7 +4,7 @@
 import Vue from 'vue'
 import conf from './config'
 import enums from './enums'
-import router from '../../router/router'
+import router from '../../router'
 import {Loading} from 'element-ui'
 import Axios from 'axios'
 // 请求公共函数

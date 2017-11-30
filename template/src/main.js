@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'normalize.css'
+import './assets/js/utils' //工具包
 import noData from './components/NoData.vue'
 import paging from './components/Paging.vue'
 import './assets/css/element-variables.scss'
