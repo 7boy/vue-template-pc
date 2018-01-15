@@ -3,20 +3,13 @@
   box-sizing: border-box
 
 body
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
   font-size: $font-normal
-.btn
-  vertical-align: middle
-  opacity: 1
-  transition: opacity .3s
-  &:hover
-    opacity: .8
-  &:active
-    opacity: 1
+  min-width: $min-width
+  overflow-x: auto
+  overflow-y: hidden
+  color: #333
+.clear
+  clear: both
 
-/*vue 动画效果*/
 
-/*淡入淡出*/
-.fade-enter-active, .fade-leave-active
-  transition: opacity .3s
-.fade-enter, .fade-leave-active
-  opacity: 0

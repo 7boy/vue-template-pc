@@ -6,7 +6,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 function view (path) {
-  return resolve => require([`./views/${path}.vue`], resolve)
+  return () => import(`./views/${path}.vue`)
 }
 
 const router = new Router({
@@ -17,7 +17,7 @@ const router = new Router({
         {path: '/', name: 'Home', component: view('Home')}
       ]
     },
-    {path: '*', redirect: {path: '/'}}]
+    {path: '*', redirect: {path: '/index'}}]
 })
 
 export default router
