@@ -7,63 +7,50 @@ import enums from './enums'
 import router from '../../router'
 import {Loading} from 'element-ui'
 import Axios from 'axios'
-// 请求公共函数
-function http (url, query) {
-  return new Promise(function (resolve, reject) {
-    var client = new XMLHttpRequest()
-    client.open('POST', url)
-    client.send(JSON.stringify(query))
-    client.onreadystatechange = function () {
-      if (client.readyState === 4 && client.status >= 200 && client.status < 400) {
-        return resolve(JSON.parse(this.response))
-      } else if (client.readyState === 4) {
-        return reject(new Error(this.statusText))
-      }
-    }
-  })
-}
+import app from '../../main'
 // 全局请求函数
-Vue.prototype.ajax = function (url, query, el, textStatus) {
+Vue.prototype.$ajax = function (obj) {
   let loading
-  let text = '拼命加载中'
-  if (textStatus === 'NO') {
-    text = undefined
-  }
-  if (el) {
+  if (obj.el) {
     loading = Loading.service({
-      target: el,
-      text: text
+      target: obj.el,
+      // 如果 noText = true 则不展示加载文案
+      text: obj.noText ? null : '拼命加载中'
     })
   }
-  return Axios.post(url, query)
+  return Axios.post(obj.url + obj.query)
     .then(resp => {
-      if (el) {
+      if (obj.el) {
         loading.close()
       }
       if (resp.rspCd === '30002') {
-        this.$message({
+        app.$message({
           showClose: true,
           message: '登录信息失效，请重新登陆',
           type: 'error'
         })
         sessionStorage.clear()
         router.push({path: '/login'})
+        return new Promise(function () {})
       } else if (resp.rspCd === '00000') {
-        let json = resp.data || resp
-        return json
+        let data = resp.data || resp
+        return data
       } else {
-        this.$message({
+        app.$message({
           showClose: true,
           message: resp.rspInf,
           type: 'error'
         })
+        return new Promise(function () {})
       }
-    }).catch(e => {
-      this.$message({
+    })
+    .catch(e => {
+      app.$message({
         showClose: true,
         message: '网络错误',
         type: 'error'
       })
+      return new Promise(function () {})
     })
 }
 // 日期转换函数
@@ -89,18 +76,30 @@ window.Date.prototype.Format = function (fmt) {
   }
   return fmt
 }
+// 表格查询通用函数
+Vue.prototype.$search = function(table,val){
+  if(val !== undefined || table.query.pageNo === undefined){
+    table.query.pageNo = val || 0
+  }
+  table.query.pageNum = app.$conf.PAGES
+  this.$ajax(table)
+    .then(json => {
+      table.list = json.list
+      table.noData = table.total = json.total
+    })
+}
 
-// element notify 封装
-Vue.prototype.notify = function (vm, str) {
-  vm.$notify({
+// 成功类型的通用提示
+Vue.prototype.$prompt = function (str) {
+  app.$notify({
     title: '成功',
-    message: str + '成功',
+    message: str,
     type: 'success'
   })
 }
 
 // 配置文件
-Vue.prototype.conf = conf
+Vue.prototype.$conf = conf
 
 // 枚举文件
-Vue.prototype.enums = enums
+Vue.prototype.$enums = enums

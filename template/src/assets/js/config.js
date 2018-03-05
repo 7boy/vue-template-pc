@@ -4,7 +4,5 @@
 // 配置文件
 export default {
   // 每页显示的条数
-  PAGES: 10,
-  // 接口地址前缀
-  CONTEXT_PATH: '/oamanage'
+  PAGES: 10
 }

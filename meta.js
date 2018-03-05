@@ -29,12 +29,12 @@ module.exports = {
       "message": "Vue build",
       "choices": [
         {
-          "name": "Runtime + Compiler: recommended for most users",
+          "name": "独立构建",
           "value": "standalone",
           "short": "standalone"
         },
         {
-          "name": "Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere",
+          "name": "运行时构建",
           "value": "runtime",
           "short": "runtime"
         }
@@ -58,7 +58,7 @@ module.exports = {
     },
     "unit": {
       "type": "confirm",
-      "message": "Setup unit tests"
+      "message": "设置单元测试"
     },
     "runner": {
       "when": "unit",
@@ -84,7 +84,7 @@ module.exports = {
     },
     "e2e": {
       "type": "confirm",
-      "message": "Setup e2e tests with Nightwatch?"
+      "message": "与Nightwatch进行e2e测试?"
     }
   },
   "filters": {

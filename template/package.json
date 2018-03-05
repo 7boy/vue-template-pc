@@ -21,7 +21,8 @@
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit/specs{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "init": "yarn add axios && yarn add node-sass && yarn add sass-loader && yarn add element-theme && yarn add element-ui && yarn add normalize.css && yarn add vue && yarn add vue-router && yarn add babel-plugin-component"
   },
   "dependencies": {
     "axios": "^*",
