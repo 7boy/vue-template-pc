@@ -9,5 +9,6 @@
   },
   "devDependencies": {
     "vue-cli": "^2.8.1"
+
   }
 }
